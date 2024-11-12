@@ -2,7 +2,7 @@
 # Project Setup Guide
 ## Information
 
-    This starter project is for API in node.js containing basic structure for role, user, notification with authentication  
+This starter project is for API in node.js containing basic structure for role, user, notification with authentication  
 
 ## Environment Setup
 
