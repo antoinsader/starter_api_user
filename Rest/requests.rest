@@ -1,0 +1,102 @@
+### Post Request
+POST http://localhost:3002/user/admin/create 
+Content-Type: application/json
+
+{
+  "username": "tonyadmin",
+  "email": "tony@gmail.com",
+  "password": "123123tt",
+  "cnfrmPassword": "123123tt",
+  "role_id": "6733976608a2e37f251b84d4"
+}
+
+###
+POST http://localhost:3002/user/admin/login 
+Content-Type: application/json
+
+{
+  "username": "tonyadmin",
+  "password": "123123tt"
+}
+
+
+###
+POST http://localhost:3002/user/customer/register
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzMzOThjODk2MDYyZmUyNDZkZWUyZTkiLCJpYXQiOjE3MzE0MzUzNjN9.gX0himCaHiKPRqof2JRWlykjDwKxFYnCCLk2GR7Y3f0
+
+{
+    "username": "tonyclient",
+    "email": "tonyclient@gmail.com",
+    "password": "123123"
+}
+
+###
+POST http://localhost:3002/user/customer/login
+Content-Type: application/json
+
+{
+  "username": "tonyclient",
+  "password": "123123"
+}
+
+
+
+###
+GET http://localhost:3002/user/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzMzOThjODk2MDYyZmUyNDZkZWUyZTkiLCJpYXQiOjE3MzE0MzUzNjN9.gX0himCaHiKPRqof2JRWlykjDwKxFYnCCLk2GR7Y3f0
+
+
+# /user/profile/udpate POST   { username, email } 
+# /user/profile/udpatePas POST  { old_password, password, confirmPassword }
+
+
+###
+GET http://localhost:3002/user/admin/getAll
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzMzOThjODk2MDYyZmUyNDZkZWUyZTkiLCJpYXQiOjE3MzE0MzUzNjN9.gX0himCaHiKPRqof2JRWlykjDwKxFYnCCLk2GR7Y3f0
+
+# /user/admin/getCustomers GET 
+# /user/admin/getOne POST {user_id}
+# /user/admin/deleteOne POST {_id}
+# /user/admin/changePasswordOfUser POST { password, _id, confirmPassword, old_password }
+# /user/admin/udpateProfile   POST { username, email, role_id }
+
+
+
+###
+POST http://localhost:3002/notification/admin/sendNotToCustomer
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzMzOThjODk2MDYyZmUyNDZkZWUyZTkiLCJpYXQiOjE3MzE0MzUzNjN9.gX0himCaHiKPRqof2JRWlykjDwKxFYnCCLk2GR7Y3f0
+
+{
+  "message": "Welcome to our app", 
+  "receipt_user_id": "67339b0be49e423c116b1864"
+}
+
+
+
+###
+GET http://localhost:3002/notification/getForUsrUnread
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzMzOWIwYmU0OWU0MjNjMTE2YjE4NjQiLCJpYXQiOjE3MzE0MzU2MzF9.lxBxcjr_C6YNq61H3U16WGASwxDnBOAENJdny0TUTok
+
+
+
+# /notification/getForUsrUnread GET 
+# /notification/getForUser GET 
+# /notification/markAsRead GET 
+# /notification/admin/notificationsSent GET 
+# /notification/admin/delete POST  {_id}
+# /notification/admin/sendNotToCustomer POST  {message, receipt_user_id}
+
+
+
+# /role/admin/getAll  GET 
+# /role/admin/create  POST {name, description}
+# /role/admin/update  POST  {_id, name, description}
+# /role/admin/delete  DELETE  {_id}
+
+
+
